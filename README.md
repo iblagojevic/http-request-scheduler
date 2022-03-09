@@ -16,8 +16,8 @@ Accept: application/json
 ```
 and makes `POST` or `GET` request to `url` after `delay` seconds, with body `payload` in case of POST request.\
 \
-Service can be used as a testing tool or as internal service for scheduling delayed messages via REST APIs.\
-
+Service can be used as a testing tool or as internal service for scheduling delayed messages via REST APIs.
+\
 Current version is basic, but the plan is to add handling for other protocols 
 targeting message destinations (AMQP, etc) and support for `PUT` and `DELETE` actions on input.
 
