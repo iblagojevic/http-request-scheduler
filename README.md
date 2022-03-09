@@ -9,7 +9,7 @@ POST http://localhost:9292/
 Accept: application/json
 {
     "action": string,      // "POST" or "GET" are supported for now
-    "url": string          // full url of targeted endpoint, 
+    "url": string          // full url of targeted endpoint
     "delay": integer
     "payload": {}          // JSON object
 }
