@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gorilla/mux"
+	"http-request-scheduler/requestscheduler"
 	"net/http"
 	"os"
 	"os/signal"
