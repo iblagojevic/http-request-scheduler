@@ -1,4 +1,4 @@
-# Golang HTTP Request Scheduler
+# HTTP Request Scheduler
 \
 Service provides http interface for scheduling RESTful requests to targeted endpoints. \
 \
