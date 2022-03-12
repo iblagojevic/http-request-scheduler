@@ -22,8 +22,8 @@ func main() {
 		Handler: router,
 	}
 
-	done := make(chan os.Signal, 1)
-	signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP, syscall.SIGSTOP, syscall.SIGSTOP)
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, os.Interrupt, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP, syscall.SIGSTOP)
 
 	go func() {
 		if err := webserver.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -32,7 +32,7 @@ func main() {
 	}()
 	fmt.Println("Starting to listen on port 9292...")
 	// wait for stop signal
-	<-done
+	<-stop
 	fmt.Println("Webserver stopped.")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
