@@ -48,7 +48,7 @@ func NewScheduledFunctionsQueue(ctx context.Context) *ScheduledFunctionsQueue {
 	q := &ScheduledFunctionsQueue{
 		pq:          PriorityQueue{},
 		ctx:         ctx,
-		pushChannel: make(chan *EnqueuedMessage, 8192),
+		pushChannel: make(chan *EnqueuedMessage),
 		timer:       time.NewTimer(time.Second * 86400),
 	}
 	// initialize priority queue which is element of schedulesd functions queue

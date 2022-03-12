@@ -101,7 +101,7 @@ func TestEndToEnd(t *testing.T) {
 	}
 
 	// fire POST requests to listener
-	for i := 1; i <= 10; i++ {
+	for i := 1; i <= 100; i++ {
 		pft := make(map[string]interface{})
 		pft["id"] = i
 		pft["object"] = "Event_" + strconv.Itoa(i)
@@ -111,21 +111,21 @@ func TestEndToEnd(t *testing.T) {
 	}
 
 	// wait some time before all delayed messages are processed
-	time.Sleep(10 * time.Second)
+	time.Sleep(7 * time.Second)
 
 	// assert message ended up on target server
-	require.Equal(t, 10, len(targetResultIds))
-	require.Equal(t, 10, len(targetResultObjects))
+	require.Equal(t, 100, len(targetResultIds))
+	require.Equal(t, 100, len(targetResultObjects))
 	var found = 0
 
 	for _, a := range targetResultObjects {
-		for j := 1; j <= 10; j++ {
+		for j := 1; j <= 100; j++ {
 			if a == "Event_"+strconv.Itoa(j) {
 				found++
 			}
 		}
 	}
-	require.Equal(t, 10, found)
+	require.Equal(t, 100, found)
 
 	// close both listener and target
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
