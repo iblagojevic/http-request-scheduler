@@ -1,4 +1,7 @@
 # HTTP Request Scheduler
+[![go report card][grc-badge]][grc-url]
+[![license][license]](LICENSE)
+\
 \
 Service provides http interface for scheduling RESTful requests to targeted endpoints. \
 \
