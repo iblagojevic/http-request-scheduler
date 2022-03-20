@@ -1,4 +1,4 @@
-module http-request-scheduler
+module github.com/iblagojevic/http-request-scheduler
 
 go 1.17
 
