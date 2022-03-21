@@ -1,6 +1,6 @@
 # HTTP Request Scheduler
 [![go report card][grc-badge]][grc-url]
-[![license][license]](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 \
 \
 Service provides http interface for scheduling RESTful requests to targeted endpoints. \
@@ -24,4 +24,5 @@ Service can be used as a testing tool or as internal service for scheduling dela
 Current version is basic, but the plan is to add handling for other protocols 
 targeting message destinations (AMQP, etc) and support for `PUT` and `DELETE` actions on input.
 
-
+[grc-badge]: https://goreportcard.com/badge/github.com/iblagojevic/http-request-scheduler
+[grc-url]: https://goreportcard.com/report/github.com/iblagojevic/http-request-scheduler
